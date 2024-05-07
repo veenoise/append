@@ -6,32 +6,103 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>append</title>
 </head>
-<body>
+<body class="bg=[#FCFCFC]">
   <nav class="flex justify-between mx-[27px] py-[19px]">
+    <img src="./../../static/icon-hamburger.svg" alt="menu icon" class="lg:hidden">
+
     <div class="brand text-[32px]">
       >>
     </div>
 
-    <div class="border border-red-800 flex justify-center w-[51px] h-[51px] rounded-[50px] bg-[#535353]">
-      <img src="../static/icon-user.svg" height="24" width="24" alt="user icon">
+    <div class="flex justify-center w-[51px] h-[51px] rounded-[50px] bg-[#535353]">
+      <img src="../../static/icon-user.svg" height="24" width="24" alt="user icon">
     </div>
   </nav>  
 
   <main class="mx-[70px]">
-    <div class="hello mt-[2px] text-[22px] font-bold">
+    <h1 class="hello mt-[2px] text-[22px] font-bold">
       Hi, John! 👋 
+    </h1>
+
+    <div class="flex justify-center mt-[13px] mb-[17px]">
+      <div class="stats w-[204px]">
+        <div id="finished" class="text-[25px]">
+          Courses Finished
+        </div>
+        <p id="no-finished" class="text-[25px]">
+          🔥 0
+        </p>
+        <p class="text-[22px]">
+          Going strong! 💪
+        </p>
+      </div>
     </div>
 
-    <div class="stats border border-red-800 flex ">
-      <div id="finished" class="">
-        Courses Finished
+    <div>
+      <h2 class="text-[22px] mb-[12px]">
+        Linux Tuesday
+      </h2>
+      <!-- TODO: This should be automated -->
+      <div id="linux-tues" class="mb-[17px]">
+        <p class="mb-[12px]">cd is a command used to view the content of a directory. To use cd, type cd, followed by the directory name. For example: cd Downloads/.</p>
+        <div class="terminal bg-[#2C2D2D] rounded-[16px]">
+          <div class="window-frame h-[30px] flex justify-end items-center">
+            <div class="window-frame-buttons flex justify-between w-[72px] mr-[7px]">
+              <div class="w-[16px] h-[16px] rounded-[50px] bg-[#FCC82D]"></div>
+              <div class="w-[16px] h-[16px] rounded-[50px] bg-[#28D33F]"></div>
+              <div class="w-[16px] h-[16px] rounded-[50px] bg-[#FE6254]"></div>
+            </div>
+          </div>
+          <div class="content px-[24px] flex justify-center flex-col pb-[30px]">
+            <p class="text-[#E8E8E8] break-all">fedora@fedora:~$ cd Downloads/</p>
+            <p class="text-[#E8E8E8] break-all">fedora@fedora:~/Downloads$ </p>
+          </div>
+        </div>
       </div>
-      <p id="no-finished" class="clas">
-        🔥 0
-      </p>
-      <p>
-        Going strong! 💪
-      </p>
+
+      <div id="your-courses" class="mb-[17px]">
+        <h2 class="text-[22px] mb-[12px]">
+          Your Courses
+        </h2>
+
+        <div class="flex gap-x-[64px] overflow-auto">
+          <div class="item-course">
+            <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+              <img src="./../../static/icon-file.svg" alt="file icon" >
+            </div>
+            <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Linux File System</h3>
+          </div>
+          <div class="item-course">
+            <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+              <h2 class="font-bold text-[#FFFFFF] text-[32px] truncate">FOSS</h2>
+            </div>
+            <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Free and Open-Source Software</h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="suggested-courses" class="mb-[17px]">
+        <h2 class="text-[22px] mb-[12px]">
+          Explore
+        </h2>
+
+        <div class="flex gap-x-[64px] overflow-auto">
+          <div class="item-course">
+            <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+              <img src="./../../static/icon-install.svg" alt="file icon" >
+            </div>
+            <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Installing Fedora</h3>
+          </div>
+          <div class="item-course">
+            <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+              <img src="./../../static/icon-customize.svg" alt="file icon" >
+            </div>
+            <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Customizing Appearance</h3>
+          </div>
+        </div>
+      </div>
+      
+
     </div>
   </main>
 </body>
