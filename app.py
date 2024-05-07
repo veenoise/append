@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -12,4 +12,4 @@ def signup():
 
 @app.route("/")
 def home():
-    return "TO FOLLOW"
+    return render_template('home.html')
