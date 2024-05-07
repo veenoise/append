@@ -12,23 +12,19 @@
       <h1 class="text-[90px] text-center pt-[37px] text-[#535353] lg:text-[#F9F9F9]">>></h1>
       <h1 class="text-center text-[60px] -mt-10 mb-[90px] text-[#535353] lg:text-[#F9F9F9]">append</h1>
     </div>
-    <form action="" class="mx-[73px] lg:flex lg:justify-center lg:flex-col">
-      <h1 class="text-[30px]">Sign Up</h1>
-      <h2 class="text-[25px] mb-[25px]">Join us!</h2>
-      <div class="pb-[12px]">
-        <label for="">Name</label> 
-      </div>
-      <input type="text" class="border rounded-[16px] border-black mb-[12px] w-full h-[38px] px-4">
+    <form action="/login" method="post" class="mx-[73px] lg:flex lg:justify-center lg:flex-col">
+      <h1 class="text-[30px]">Login</h1>
+      <h2 class="text-[25px] mb-[25px]">Welcome back!</h2>
       <div class="pb-[12px]">
         <label for="">Email</label> 
       </div>
-      <input type="email" class="border rounded-[16px] border-black mb-[12px] w-full h-[38px] px-4">
+      <input name="email" type="email" class="border rounded-[16px] border-black mb-[12px] w-full h-[38px] px-4">
       <div class="pb-[12px]">
         <label for="">Password</label>
       </div>
-      <input type="password" class="border rounded-[16px] border-black mb-[25px] w-full h-[38px] px-4">
+      <input name="password" type="password" class="border rounded-[16px] border-black mb-[25px] w-full h-[38px] px-4">
       <button type="submit" class="font-bold border bg-[#535353] w-full rounded-[16px] mb-[25px] text-[22px] py-[9px] text-[#F9F9F9]">Login</button>
-      <p>Don't have an account? <a href="" class="text-blue-700 font-bold">Sign Up</a></p>
+      <p>Don't have an account? <a href="/signup" class="text-blue-700 font-bold">Sign Up</a></p>
     </form>
   </div>
   
