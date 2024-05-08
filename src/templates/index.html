@@ -6,16 +6,40 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>append</title>
 </head>
-<body class="bg=[#FCFCFC]">
-  <nav class="flex justify-between mx-[27px] py-[19px]">
-    <img src="./../../static/icon-hamburger.svg" alt="menu icon" class="lg:hidden">
+<body class="bg-[#FCFCFC]">
+  <nav class="sticky top-0 bg-[#FCFCFC] shadow-md mb-[22px]">
+    <div class="flex justify-between mx-[27px] py-[19px]">
+      <img src="{{ url_for('static', filename='media/icon-hamburger.svg') }}" alt="menu icon" class="lg:hidden cursor-pointer" id="menuButton">
 
-    <div class="brand text-[32px]">
-      >>
-    </div>
-
-    <div class="flex justify-center w-[51px] h-[51px] rounded-[50px] bg-[#535353]">
-      <img src="../../static/icon-user.svg" height="24" width="24" alt="user icon">
+      <div class="sidebar transform ease-in-out delay-150 fixed top-0 left-0 hidden lg:hidden bg-[#2C2D2D] h-screen w-[325px] text-[#E8E8E8] ">
+        <div class="flex flex-col mt-[32px]">
+          <div class="flex justify-end mx-[24px] mb-[24px] cursor-pointer" id="closeMenu">
+            <img src="{{ url_for('static', filename='media/icon-close.svg') }}" width="24" height="24" alt="close button">  
+          </div>
+          <div class="flex items-center flex-col">
+            <a href="" class="text-[20px] mb-[12px] text-[#]">Home</a>
+            <a href="" class="text-[20px] mb-[12px]">Courses</a>
+            <a href="" class="text-[20px]">Explore</a>  
+          </div>
+        </div>
+      </div>
+  
+      <div class="brand text-[32px]">
+        >>
+      </div>
+  
+      <div class="options hidden lg:block lg:grid lg:grid-cols-3 lg:gap-x-[32px]">
+        <a href="" class="text-[22px] text-center">Home</a>
+        <a href="" class="text-[22px]">Courses</a>
+        <a href="" class="text-[22px]">Explore</a>
+        <div class="h-[5px] rounded-[5px] bg-[#535353]"></div>
+        <div class=""></div>
+        <div class=""></div>
+      </div>
+  
+      <div class="flex justify-center w-[51px] h-[51px] rounded-[50px] bg-[#535353]">
+        <img src="{{ url_for('static', filename='media/icon-user.svg') }}" height="24" width="24" alt="user icon">
+      </div>
     </div>
   </nav>  
 
@@ -68,7 +92,7 @@
         <div class="flex gap-x-[64px] overflow-auto">
           <div class="item-course">
             <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
-              <img src="./../../static/icon-file.svg" alt="file icon" >
+              <img src="{{ url_for('static', filename='media/icon-file.svg') }}" alt="file icon" >
             </div>
             <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Linux File System</h3>
           </div>
@@ -89,13 +113,13 @@
         <div class="flex gap-x-[64px] overflow-auto">
           <div class="item-course">
             <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
-              <img src="./../../static/icon-install.svg" alt="file icon" >
+              <img src="{{ url_for('static', filename='media/icon-install.svg') }}" alt="file icon" >
             </div>
             <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Installing Fedora</h3>
           </div>
           <div class="item-course">
             <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
-              <img src="./../../static/icon-customize.svg" alt="file icon" >
+              <img src="{{ url_for('static', filename='media/icon-customize.svg') }}" alt="file icon" >
             </div>
             <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Customizing Appearance</h3>
           </div>
@@ -105,5 +129,7 @@
 
     </div>
   </main>
+
+  <script src="{{url_for('static', filename='/scripts/main.js') }}"></script>
 </body>
 </html>
