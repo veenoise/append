@@ -17,9 +17,9 @@
             <img src="{{ url_for('static', filename='media/icon-close.svg') }}" width="24" height="24" alt="close button">  
           </div>
           <div class="flex items-center flex-col">
-            <a href="" class="text-[20px] mb-[12px] text-[#]">Home</a>
-            <a href="" class="text-[20px] mb-[12px]">Courses</a>
-            <a href="" class="text-[20px]">Explore</a>  
+            <a href="" class="text-[20px] rounded-[16px] mb-[12px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300 active font-bold">Home</a>
+            <a href="" class="text-[20px] rounded-[16px] mb-[12px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300">Courses</a>
+            <a href="" class="text-[20px] rounded-[16px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300">Explore</a>  
           </div>
         </div>
       </div>
@@ -29,16 +29,20 @@
       </div>
   
       <div class="options hidden lg:block lg:grid lg:grid-cols-3 lg:gap-x-[32px]">
-        <a href="" class="text-[22px] text-center">Home</a>
-        <a href="" class="text-[22px]">Courses</a>
-        <a href="" class="text-[22px]">Explore</a>
-        <div class="h-[5px] rounded-[5px] bg-[#535353]"></div>
+        <a href="" class="text-[22px] text-center pt-1 px-5 hover:bg-[#535353] hover:text-white rounded-tl-[16px] rounded-tr-[16px] transition ease-in duration-300 font-bold">Home</a>
+        <a href="" class="text-[22px] text-center pt-1 px-5 hover:bg-[#535353] hover:text-white rounded-tl-[16px] rounded-tr-[16px] transition ease-in duration-300">Courses</a>
+        <a href="" class="text-[22px] text-center pt-1 px-5 hover:bg-[#535353] hover:text-white rounded-tl-[16px] rounded-tr-[16px] transition ease-in duration-300">Explore</a>
+        <div class="h-[5px] rounded-bl-[16px] rounded-br-[16px] bg-[#535353]"></div>
         <div class=""></div>
         <div class=""></div>
       </div>
   
-      <div class="flex justify-center w-[51px] h-[51px] rounded-[50px] bg-[#535353]">
+      <button class="flex justify-center items-center w-[51px] h-[51px] rounded-[50px] bg-[#535353] cursor-pointer" id="userIcon">
         <img src="{{ url_for('static', filename='media/icon-user.svg') }}" height="24" width="24" alt="user icon">
+      </button>
+      <div class="hidden absolute right-[27px] top-[89px] bg-[#2C2D2D] py-3 px-3 rounded-lg w-[150px]" id="userOptions">
+        <div class="text-[#E8E8E8] mb-2">User Profile</div>
+        <div class="text-[#E8E8E8] mb-2">Logout</div>
       </div>
     </div>
   </nav>  
@@ -48,88 +52,89 @@
       Hi, John! 👋 
     </h1>
 
-    <div class="flex justify-center mt-[13px] mb-[17px]">
-      <div class="stats w-[204px]">
-        <div id="finished" class="text-[25px]">
-          Courses Finished
+    <div class="lg:grid lg:grid-cols-2">
+      <div class="flex justify-center mt-[13px] mb-[17px] lg:order-last">
+        <div class="stats w-[204px]">
+          <div id="finished" class="text-[25px]">
+            Courses Finished
+          </div>
+          <p id="no-finished" class="text-[25px]">
+            🔥 0
+          </p>
+          <p class="text-[22px]">
+            Going strong! 💪
+          </p>
         </div>
-        <p id="no-finished" class="text-[25px]">
-          🔥 0
-        </p>
-        <p class="text-[22px]">
-          Going strong! 💪
-        </p>
+      </div>
+
+      <div>
+        <h2 class="text-[22px] mb-[12px]">
+          Linux Tuesday
+        </h2>
+        <!-- TODO: This should be automated -->
+        <div id="linux-tues" class="mb-[17px]">
+          <p class="mb-[12px]">cd is a command used to view the content of a directory. To use cd, type cd, followed by the directory name. For example: cd Downloads/.</p>
+          <div class="terminal bg-[#2C2D2D] rounded-[16px]">
+            <div class="window-frame h-[30px] flex justify-end items-center">
+              <div class="window-frame-buttons flex justify-between w-[72px] mr-[7px]">
+                <div class="w-[16px] h-[16px] rounded-[50px] bg-[#FCC82D]"></div>
+                <div class="w-[16px] h-[16px] rounded-[50px] bg-[#28D33F]"></div>
+                <div class="w-[16px] h-[16px] rounded-[50px] bg-[#FE6254]"></div>
+              </div>
+            </div>
+            <div class="content px-[24px] flex justify-center flex-col pb-[30px]">
+              <p class="text-[#E8E8E8] break-all">fedora@fedora:~$ cd Downloads/</p>
+              <p class="text-[#E8E8E8] break-all">fedora@fedora:~/Downloads$ </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div>
+    <div id="your-courses" class="mb-[17px]">
       <h2 class="text-[22px] mb-[12px]">
-        Linux Tuesday
+        Your Courses
       </h2>
-      <!-- TODO: This should be automated -->
-      <div id="linux-tues" class="mb-[17px]">
-        <p class="mb-[12px]">cd is a command used to view the content of a directory. To use cd, type cd, followed by the directory name. For example: cd Downloads/.</p>
-        <div class="terminal bg-[#2C2D2D] rounded-[16px]">
-          <div class="window-frame h-[30px] flex justify-end items-center">
-            <div class="window-frame-buttons flex justify-between w-[72px] mr-[7px]">
-              <div class="w-[16px] h-[16px] rounded-[50px] bg-[#FCC82D]"></div>
-              <div class="w-[16px] h-[16px] rounded-[50px] bg-[#28D33F]"></div>
-              <div class="w-[16px] h-[16px] rounded-[50px] bg-[#FE6254]"></div>
-            </div>
+
+      <div class="flex gap-x-[64px] overflow-auto">
+        <div class="item-course">
+          <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+            <img src="{{ url_for('static', filename='media/icon-file.svg') }}" alt="file icon" >
           </div>
-          <div class="content px-[24px] flex justify-center flex-col pb-[30px]">
-            <p class="text-[#E8E8E8] break-all">fedora@fedora:~$ cd Downloads/</p>
-            <p class="text-[#E8E8E8] break-all">fedora@fedora:~/Downloads$ </p>
+          <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Linux File System</h3>
+        </div>
+        <div class="item-course">
+          <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+            <h2 class="font-bold text-[#FFFFFF] text-[32px] truncate">FOSS</h2>
           </div>
+          <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Free and Open-Source Software</h3>
         </div>
       </div>
-
-      <div id="your-courses" class="mb-[17px]">
-        <h2 class="text-[22px] mb-[12px]">
-          Your Courses
-        </h2>
-
-        <div class="flex gap-x-[64px] overflow-auto">
-          <div class="item-course">
-            <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
-              <img src="{{ url_for('static', filename='media/icon-file.svg') }}" alt="file icon" >
-            </div>
-            <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Linux File System</h3>
-          </div>
-          <div class="item-course">
-            <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
-              <h2 class="font-bold text-[#FFFFFF] text-[32px] truncate">FOSS</h2>
-            </div>
-            <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Free and Open-Source Software</h3>
-          </div>
-        </div>
-      </div>
-
-      <div id="suggested-courses" class="mb-[17px]">
-        <h2 class="text-[22px] mb-[12px]">
-          Explore
-        </h2>
-
-        <div class="flex gap-x-[64px] overflow-auto">
-          <div class="item-course">
-            <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
-              <img src="{{ url_for('static', filename='media/icon-install.svg') }}" alt="file icon" >
-            </div>
-            <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Installing Fedora</h3>
-          </div>
-          <div class="item-course">
-            <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
-              <img src="{{ url_for('static', filename='media/icon-customize.svg') }}" alt="file icon" >
-            </div>
-            <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Customizing Appearance</h3>
-          </div>
-        </div>
-      </div>
-      
-
     </div>
-  </main>
 
+    <div id="suggested-courses" class="mb-[17px]">
+      <h2 class="text-[22px] mb-[12px]">
+        Explore
+      </h2>
+
+      <div class="flex gap-x-[64px] overflow-auto">
+        <div class="item-course">
+          <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+            <img src="{{ url_for('static', filename='media/icon-install.svg') }}" alt="file icon" >
+          </div>
+          <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Installing Fedora</h3>
+        </div>
+        <div class="item-course">
+          <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+            <img src="{{ url_for('static', filename='media/icon-customize.svg') }}" alt="file icon" >
+          </div>
+          <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Customizing Appearance</h3>
+        </div>
+      </div>
+    </div>
+
+    
+  </main>
   <script src="{{url_for('static', filename='/scripts/main.js') }}"></script>
 </body>
 </html>
