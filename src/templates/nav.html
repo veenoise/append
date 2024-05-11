@@ -1,0 +1,42 @@
+
+<nav class="sticky top-0 bg-[#FCFCFC] shadow-md mb-[22px]">
+  <div class="flex justify-between mx-[27px] py-[19px]">
+    <img src="{{ url_for('static', filename='media/icon-hamburger.svg') }}" alt="menu icon" class="lg:hidden cursor-pointer" id="menuButton">
+
+    <div class="sidebar transform ease-in-out delay-150 fixed top-0 left-0 hidden lg:hidden bg-[#2C2D2D] h-screen w-[325px] text-[#E8E8E8] ">
+      <div class="flex flex-col mt-[32px]">
+        <div class="flex justify-end mx-[24px] mb-[24px] cursor-pointer" id="closeMenu">
+          <img src="{{ url_for('static', filename='media/icon-close.svg') }}" width="24" height="24" alt="close button">  
+        </div>
+        <div class="flex items-center flex-col">
+          <a href="" class="text-[20px] rounded-[16px] mb-[12px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300 active font-bold">Home</a>
+          <a href="" class="text-[20px] rounded-[16px] mb-[12px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300">Courses</a>
+          <a href="" class="text-[20px] rounded-[16px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300">Explore</a>  
+        </div>
+      </div>
+    </div>
+
+    <div class="brand text-[32px]">
+      >>
+    </div>
+
+    <div class="options hidden lg:block lg:grid lg:grid-cols-3 lg:gap-x-[32px]">
+      <a href="" class="text-[22px] text-center pt-1 px-5 hover:bg-[#535353] hover:text-white rounded-tl-[16px] rounded-tr-[16px] transition ease-in duration-300 font-bold">Home</a>
+      <a href="" class="text-[22px] text-center pt-1 px-5 hover:bg-[#535353] hover:text-white rounded-tl-[16px] rounded-tr-[16px] transition ease-in duration-300">Courses</a>
+      <a href="" class="text-[22px] text-center pt-1 px-5 hover:bg-[#535353] hover:text-white rounded-tl-[16px] rounded-tr-[16px] transition ease-in duration-300">Explore</a>
+      <div class="h-[5px] rounded-bl-[16px] rounded-br-[16px] bg-[#535353]"></div>
+      <div class=""></div>
+      <div class=""></div>
+    </div>
+
+    <button class="flex justify-center items-center w-[51px] h-[51px] rounded-[50px] bg-[#535353] cursor-pointer" id="userIcon">
+      <img src="{{ url_for('static', filename='media/icon-user.svg') }}" height="24" width="24" alt="user icon">
+    </button>
+    <div class="hidden absolute right-[27px] top-[89px] bg-[#2C2D2D] py-3 px-3 rounded-lg w-[150px]" id="userOptions">
+      <div class="text-[#E8E8E8] mb-2">User Profile</div>
+      <div class="text-[#E8E8E8] mb-2">Logout</div>
+    </div>
+  </div>
+</nav>  
+
+<script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
