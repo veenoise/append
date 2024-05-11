@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, session
 
 
 def create_app(test_config=None):
@@ -32,10 +32,14 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
-    from . import auth
+    from . import auth, routes
     app.register_blueprint(auth.bp)
-
-    from . import routes
     app.register_blueprint(routes.bp)
+
+    @app.context_processor
+    def inject_user():
+        if session:
+            return dict(current_user=session['username'])
+        return dict(current_user=None)
 
     return app
