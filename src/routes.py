@@ -18,3 +18,10 @@ def course(coursecode, topic):
     html = markdown(open(f'courses/{coursecode}/{topic}.md').read())
     return render_template('course.html', course=html)
 
+@bp.route('/courses/')
+def courses():
+    return render_template('courses.html')
+
+@bp.route('/explore')
+def explore():
+    return render_template('explore.html')

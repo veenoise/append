@@ -9,9 +9,9 @@
           <img src="{{ url_for('static', filename='media/icon-close.svg') }}" width="24" height="24" alt="close button">  
         </div>
         <div class="flex items-center flex-col">
-          <a href="{{ url_for('main.index') }}" class="text-[20px] rounded-[16px] mb-[12px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300 active font-bold">Home</a>
-          <a href="{{ url_for('main.course', coursecode='coursename', topic='topic1') }}" class="text-[20px] rounded-[16px] mb-[12px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300">Courses</a>
-          <a href="" class="text-[20px] rounded-[16px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300">Explore</a>  
+          <a href="{{ url_for('main.index') }}"   class="{% if active_item == 'home'    %} active font-bold {% endif %} text-[20px] rounded-[16px] mb-[12px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300">Home</a>
+          <a href="{{ url_for('main.courses') }}" class="{% if active_item == 'courses' %} active font-bold {% endif %} text-[20px] rounded-[16px] mb-[12px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300">Courses</a>
+          <a href="{{ url_for('main.explore') }}" class="{% if active_item == 'explore' %} active font-bold {% endif %} text-[20px] rounded-[16px] p-3 hover:bg-white hover:text-gray-600 transition ease-in duration-300">Explore</a>  
         </div>
       </div>
     </div>
@@ -21,12 +21,10 @@
     </div>
 
     <div class="options hidden lg:block lg:grid lg:grid-cols-3 lg:gap-x-[32px]">
-      <a href="{{ url_for('main.index') }}" class="text-[22px] text-center pt-1 px-5 hover:bg-[#535353] hover:text-white rounded-tl-[16px] rounded-tr-[16px] transition ease-in duration-300 font-bold">Home</a>
-      <a href="{{ url_for('main.course', coursecode='coursename', topic='topic1') }}" class="text-[22px] text-center pt-1 px-5 hover:bg-[#535353] hover:text-white rounded-tl-[16px] rounded-tr-[16px] transition ease-in duration-300">Courses</a>
-      <a href="" class="text-[22px] text-center pt-1 px-5 hover:bg-[#535353] hover:text-white rounded-tl-[16px] rounded-tr-[16px] transition ease-in duration-300">Explore</a>
-      <div class="h-[5px] rounded-bl-[16px] rounded-br-[16px] bg-[#535353]"></div>
-      <div class=""></div>
-      <div class=""></div>
+      <!-- active = border-b-4 border-[#535353] font-bold -->
+      <a href="{{ url_for('main.index') }}"   class="{% if active_item == 'home'    %} border-b-4 border-[#535353] font-bold {% endif %} text-[22px] text-center pt-2 px-8 hover:bg-[#535353] hover:text-white rounded-t-[16px] rounded-b-[4px] transition ease-in duration-300">Home</a>
+      <a href="{{ url_for('main.courses') }}" class="{% if active_item == 'courses' %} border-b-4 border-[#535353] font-bold {% endif %} text-[22px] text-center pt-2 px-8 hover:bg-[#535353] hover:text-white rounded-t-[16px] rounded-b-[4px] transition ease-in duration-300">Courses</a>
+      <a href="{{ url_for('main.explore') }}" class="{% if active_item == 'explore' %} border-b-4 border-[#535353] font-bold {% endif %} text-[22px] text-center pt-2 px-8 hover:bg-[#535353] hover:text-white rounded-t-[16px] rounded-b-[4px] transition ease-in duration-300">Explore</a>
     </div>
 
     <button class="flex justify-center items-center w-[51px] h-[51px] rounded-[50px] bg-[#535353] cursor-pointer" id="userIcon">
