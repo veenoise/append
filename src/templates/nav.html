@@ -4,7 +4,7 @@
       class="lg:hidden cursor-pointer" id="menuButton">
 
     <div
-      class="sidebar transform ease-in-out delay-150 fixed top-0 left-0 hidden lg:hidden bg-[#2C2D2D] h-screen w-[325px] text-[#E8E8E8] ">
+      class="sidebar transform ease-in-out delay-150 fixed top-0 left-0 hidden lg:hidden bg-[#2C2D2D] h-screen w-[325px] text-[#E8E8E8]">
       <div class="flex flex-col mt-[32px]">
         <div class="flex justify-end mx-[24px] mb-[24px] cursor-pointer" id="closeMenu">
           <img src="{{ url_for('static', filename='media/icon-close.svg') }}" width="24" height="24" alt="close button">
@@ -34,7 +34,7 @@
         class="{% if active_item == 'explore' %} border-b-4 border-[#535353] font-bold {% endif %} text-[22px] text-center pt-2 px-8 hover:bg-[#535353] hover:text-white rounded-t-[16px] rounded-b-[4px] transition ease-in duration-300">Explore</a>
     </div>
 
-    <button class="flex justify-center items-center w-[51px] h-[51px] rounded-[50px] bg-[#535353] cursor-pointer"
+    <button class="flex justify-center items-center w-[51px] h-[51px] rounded-[50px] bg-[#535353] cursor-pointer z-50"
       id="userIcon">
       <img src="{{ url_for('static', filename='media/icon-user.svg') }}" height="24" width="24" alt="user icon">
     </button>

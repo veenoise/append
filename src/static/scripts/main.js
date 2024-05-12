@@ -17,3 +17,17 @@ document.querySelector('#userIcon').addEventListener('click', function() {
 
   userIconClick++;
 })
+
+// Filter button interaction
+document.addEventListener('DOMContentLoaded', function() {
+  let filterClick = 0;
+  document.querySelector('#filter').addEventListener('click', function () {
+    if (filterClick % 2 === 0) {
+      document.querySelector('#filterOptions').style.display = 'block';
+    } else {
+      document.querySelector('#filterOptions').style.display = 'none';
+    }
+
+    filterClick++;
+  })  
+});
