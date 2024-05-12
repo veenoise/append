@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% set active_item = 'courses' %}
+
+{% block body %}
+<main class="mx-[70px]">
+  <div class="lg:grid lg:grid-cols-[1fr_345px]">
+    <h2 class="text-[25px] order-last flex justify-center mb-[17px]">Keep on Learning! 💡</h2>
+    <div class="item-course flex gap-[24px] grid grid-cols-[128px_1fr] mb-[22px]">
+      <div>
+        <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+          <img src="{{ url_for('static', filename='media/icon-file.svg') }}" alt="file icon" >
+        </div>
+        <button class="bg-[#1A1A1A] w-full rounded-[16px] text-[#FDFDFD] font-bold py-[4px] mt-[12px]">Enroll</button>
+      </div>
+      <div>
+        <h3 class=" line-clamp-4 text-[18px]">Linux File System</h3>
+        <p class="mb-[22px] hidden lg:block mt-[4px]">This course will teach you about the file structure in linux. Learning the linux file system would enable you to troubleshoot problems that you might encounter. Furthermore, it will help you know the ins and outs of your operating system.</p>
+      </div>
+    </div>
+  </div>
+  <p class="mb-[22px] lg:hidden">This course will teach you about the file structure in linux. Learning the linux file system would enable you to troubleshoot problems that you might encounter. Furthermore, it will help you know the ins and outs of your operating system.</p>
+
+  <div id="suggested-courses" class="mb-[17px]">
+    <h2 class="text-[22px] mb-[12px]">
+      Suggested
+    </h2>
+    <div class="flex gap-x-[64px] overflow-auto">
+      <div class="item-course">
+        <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+          <img src="{{ url_for('static', filename='media/icon-customize.svg') }}" alt="file icon" >
+        </div>
+        <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Customizing Appearance</h3>
+      </div>
+      <div class="item-course">
+        <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+          <img src="{{ url_for('static', filename='media/icon-install.svg') }}" alt="file icon" >
+        </div>
+        <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Installing Fedora</h3>
+      </div>
+      <div class="item-course">
+        <div class="bg-[#535353] rounded-[16px] w-[128px] h-[96px] flex justify-center items-center">
+          <h2 class="font-bold text-[#FFFFFF] text-[32px] truncate">FOSS</h2>
+        </div>
+        <h3 class="w-[128px] h-[54px] line-clamp-2 text-[18px]">Free and Open-Source Software</h3>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

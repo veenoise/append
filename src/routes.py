@@ -21,3 +21,7 @@ def courses():
 @bp.route('/explore')
 def explore():
     return render_template('explore.html')
+
+@bp.route('/explore/specific')
+def explore_specific():
+    return render_template('explore-specific.html')
